@@ -2,9 +2,12 @@
 
 
 module.exports = function (app) {
-    var AuthHelper = require('../helpers/authHelper');
-    var EmailController = require('../controllers/emailController')
+    const AuthHelper = require('../helpers/authHelper');
+    const EmailController = require('../controllers/emailController');
 
-    app.route('/sendMail')
+    app.route('/sendmail')
         .post(EmailController.sendMail);
+
+    app.route('/sendmail/bulk')
+        .post(EmailController.sendBulkMail);
 };

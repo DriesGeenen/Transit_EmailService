@@ -2,15 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const config = require('./config/config');
 const app = express();
-var router = express.Router();
+let router = express.Router();
 const jsonwebtoken = require("jsonwebtoken");
 const cors = require('cors');
 const emailRoutes = require('./routes/emailRoutes');
 
-
 //Port number
 const port = process.env.PORT || 6605;
-
 
 app.use(function (req, res, next) {
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {

@@ -1,5 +1,5 @@
 module.exports = {
-    secret: 'notpublic',
+    secret: process.env.SECRET || 'notpublic',
     transporter: {
         host: 'smtp.gmail.com',
         port: 587,
